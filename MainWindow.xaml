@@ -1,0 +1,27 @@
+﻿<Window x:Class="SimpleMvvmPatternInWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleMvvmPatternInWpf"
+        mc:Ignorable="d"
+        Title="Simple MVVM Pattern In WPF" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView Name="dgUser" ItemsSource="{Binding Users}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="UserId" Width="50" DisplayMemberBinding="{Binding UserId}"></GridViewColumn>
+                    <GridViewColumn Header="FullName" Width="200" DisplayMemberBinding="{Binding FullName}"></GridViewColumn>
+                    <GridViewColumn Header="Email" Width="200" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
+                    <GridViewColumn Header="PhoneNumber" Width="100" DisplayMemberBinding="{Binding PhoneNumber}"></GridViewColumn>
+                    <GridViewColumn Header="Address" Width="200" DisplayMemberBinding="{Binding Address}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
